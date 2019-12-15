@@ -10,11 +10,13 @@ html {
 
 body {
   width: 100%;
+
   font-style: normal;
-  font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-size: $main-font-size;
+  font-family: "Ubuntu", sans-serif;
   color: $main-color;
+
   background-color: #ffffff;
 }
 
@@ -24,18 +26,20 @@ img {
 }
 
 .list-reset {
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 .link {
-  text-decoration: none;
-  color: $main-color;
   font-size: $main-font-size;
+  color: $main-color;
+  text-decoration: none;
   &:hover,
   &:focus {
     color: $accent-color;
+
     outline: none;
   }
 }
@@ -44,15 +48,19 @@ img {
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
+
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
   overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
 }
 
 .container {

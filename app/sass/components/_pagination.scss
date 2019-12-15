@@ -4,22 +4,24 @@
   padding-right: 17px;
 
   a {
-		color: #969696;
-	}
-	
-	& > a {
-		padding-bottom: 3px;
-		border-bottom: 1px solid $accent-color;
-	}
+    color: #969696;
+  }
+
+  & > a {
+    padding-bottom: 3px;
+
+    border-bottom: 1px solid $accent-color;
+  }
 }
 
 .pagination {
   display: flex;
-	width: 196px;
-	margin-left: 188px;
   justify-content: space-between;
+  width: 196px;
+  margin-left: 188px;
   & li:last-child svg {
     transform: rotate(-90deg);
+
     fill: #969696;
     &:hover,
     &:focus {

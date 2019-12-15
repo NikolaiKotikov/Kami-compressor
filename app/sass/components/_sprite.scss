@@ -1,61 +1,73 @@
 .icon {
   display: inline-block;
-  background: url("../img/sprite.png") no-repeat;
   overflow: hidden;
-  text-indent: -9999px;
+
   text-align: left;
+  text-indent: -9999px;
+
+  background: url("../img/sprite.png") no-repeat;
   &:hover {
     background-image: url("../img/sprite-hover.png");
   }
 }
 
 .icon--belt-drive {
-  background-position: -10px -0px;
   width: 33px;
   height: 20px;
+
+  background-position: -10px -0;
 }
 .icon--diesel-engine {
-  background-position: -10px -30px;
   width: 31px;
   height: 20px;
+
+  background-position: -10px -30px;
 }
 .icon--petrol-engine {
-  background-position: -10px -60px;
   width: 31px;
   height: 20px;
+
+  background-position: -10px -60px;
 }
 .icon--requency-transformer {
-  background-position: -10px -90px;
   width: 31px;
   height: 20px;
+
+  background-position: -10px -90px;
 }
 .icon--voltage-220 {
-  background-position: -10px -120px;
   width: 31px;
   height: 11px;
+
+  background-position: -10px -120px;
 }
 .icon--voltage-380 {
-  background-position: -10px -141px;
   width: 29px;
   height: 11px;
+
+  background-position: -10px -141px;
 }
 .icon--plug {
-  background-position: -10px -162px;
   width: 20px;
   height: 20px;
+
+  background-position: -10px -162px;
 }
 .icon--nobelt-drive {
-  background-position: -10px -192px;
   width: 19px;
   height: 20px;
+
+  background-position: -10px -192px;
 }
 .icon--dehumidifier {
-  background-position: -10px -222px;
   width: 18px;
   height: 20px;
+
+  background-position: -10px -222px;
 }
 .icon--without-oil {
-  background-position: -10px -252px;
   width: 12px;
   height: 20px;
+
+  background-position: -10px -252px;
 }
