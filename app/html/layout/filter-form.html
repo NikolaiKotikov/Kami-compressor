@@ -1,0 +1,237 @@
+<form action="https://echo.htmlacademy.ru/courses" method="post" class="filters__form form">
+
+	<div class="form__controls">
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title">
+				Цена
+				<span class="title-label title-label--price">₽</span>
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<div class="range range--price ui-disabled"></div>
+				<ul class="values list-reset">
+					<li class="value price-min">0</li>
+					<li class="value price-max">6 000 000</li>
+				</ul>
+				<input type="hidden" name="price-min" id="price-min" value="-1" />
+				<input type="hidden" name="price-max" id="price-max" value="-1" />
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title">
+				Давление
+				<span class="title-label">бар</span>
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<div class="range range--press ui-disabled"></div>
+				<ul class="values list-reset">
+					<li class="value press-min">0</li>
+					<li class="value press-max">15</li>
+				</ul>
+				<input type="hidden" name="press-min" id="press-min" value="-1" />
+				<input type="hidden" name="press-max" id="press-max" value="-1" />
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title">
+				Произв-ть
+				<span class="title-label">м&#179;/мин</span>
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<div class="range range--prod ui-disabled"></div>
+				<ul class="values list-reset">
+					<li class="value prod-min">0</li>
+					<li class="value prod-max">54</li>
+				</ul>
+				<input type="hidden" name="prod-min" id="prod-min" value="-1" />
+				<input type="hidden" name="prod-max" id="prod-max" value="-1" />
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title">
+				Мощность
+				<span class="title-label">кВт</span>
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<div class="range range--pow ui-disabled"></div>
+				<ul class="values list-reset">
+					<li class="value pow-min">0</li>
+					<li class="value pow-max">315</li>
+				</ul>
+				<input type="hidden" name="pow-min" id="pow-min" value="-1" />
+				<input type="hidden" name="pow-max" id="pow-max" value="-1" />
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title title--checkbox">
+				Ресивер
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<input class="visually-hidden checkbox" type="checkbox" name="0" id="0" disabled>
+				<label class="checkbox-label" for="0">0</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="200" id="200" checked>
+				<label class="checkbox-label" for="200">200 (<span>9</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="250" id="250">
+				<label class="checkbox-label" for="250">250 (<span>11</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="270" id="270">
+				<label class="checkbox-label" for="270">270 (<span>70</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="300" id="300" checked>
+				<label class="checkbox-label" for="300">300 (<span>36</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="500" id="500">
+				<label class="checkbox-label" for="500">500 (<span>186</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="600" id="600">
+				<label class="checkbox-label" for="600">600 (<span>4</span>)</label>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title title--checkbox">
+				Осушитель
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<input class="visually-hidden checkbox" type="radio" name="desiccant" id="desiccant-y" value="yes">
+				<label class="checkbox-label" for="desiccant-y">Да (<span>276</span>)</label>
+
+				<input class="visually-hidden checkbox" type="radio" name="desiccant" id="desiccant-n" value="no">
+				<label class="checkbox-label" for="desiccant-n">Нет (<span>807</span>)</label>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title title--checkbox">
+				Питание
+				<span class="title-label">В</span>
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<input class="visually-hidden checkbox" type="checkbox" name="voltage-220" id="voltage-220">
+				<label class="checkbox-label" for="voltage-220">220 (<span>6</span>)</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="voltage-380" id="voltage-380">
+				<label class="checkbox-label" for="voltage-380">380 (<span>761</span>)</label>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title title--checkbox">
+				Частот. регулятор
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<input class="visually-hidden checkbox" type="radio" name="frequency-controller" id="frequency-controller-y"
+					value="yes">
+				<label class="checkbox-label" for="frequency-controller-y">Да (<span>270</span>)</label>
+
+				<input class="visually-hidden checkbox" type="radio" name="frequency-controller" id="frequency-controller-n"
+					value="no">
+				<label class="checkbox-label" for="frequency-controller-n">Нет (<span>805</span>)</label>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset class="form__fieldset fieldset">
+
+			<legend class="fieldset__title title title--checkbox">
+				Производитель
+				<svg class="title__icon" role="img" width="16" height="9">
+					<use xlink:href="img/sprite.svg#arrow" /></svg>
+			</legend>
+
+			<div class="fieldset__body">
+
+				<input class="visually-hidden checkbox" type="checkbox" name="triumph" id="triumph">
+				<label class="checkbox-label" for="triumph">Triumph</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="ekomac" id="ekomac" checked>
+				<label class="checkbox-label" for="ekomac">EKOMAC</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="chicago-pneumatic" id="chicago-pneumatic">
+				<label class="checkbox-label" for="chicago-pneumatic">Сhicago Pneumatic</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="rkz" id="rkz">
+				<label class="checkbox-label" for="rkz">РКЗ</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="dalgakiran" id="dalgakiran">
+				<label class="checkbox-label" for="dalgakiran">DALGAKIRAN</label>
+
+				<input class="visually-hidden checkbox" type="checkbox" name="comaro" id="comaro">
+				<label class="checkbox-label" for="comaro">COMARO</label>
+
+
+			</div>
+
+		</fieldset>
+
+	</div>
+
+	<fieldset class="form__fieldset fieldset fieldset--buttons">
+
+		<button class="button button--small button--dark form__button" type="submit">Показть</button>
+		<button class="button button--small button--light form__button" type="reset">Сбросить</button>
+
+	</fieldset>
+
+</form>

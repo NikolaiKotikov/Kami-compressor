@@ -1,0 +1,29 @@
+.pagination-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 17px;
+
+  a {
+		color: #969696;
+	}
+	
+	& > a {
+		padding-bottom: 3px;
+		border-bottom: 1px solid $accent-color;
+	}
+}
+
+.pagination {
+  display: flex;
+	width: 196px;
+	margin-left: 188px;
+  justify-content: space-between;
+  & li:last-child svg {
+    transform: rotate(-90deg);
+    fill: #969696;
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
+  }
+}

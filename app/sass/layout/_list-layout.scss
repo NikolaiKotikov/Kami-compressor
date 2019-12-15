@@ -1,0 +1,102 @@
+.results.results--list {
+
+	.card.card--out-of-stock {
+		.card__photo-wrapper {
+			margin-right: 26px;
+		}
+
+		.prop-list__title {
+			min-width: 262px;
+		}
+	}
+
+	.status-label--in-stock {
+		width: 93px;
+    height: 20px;
+    white-space: nowrap;
+	}
+
+	.status-label--out-of-stock {
+		width: 116px;
+    height: 20px;
+    white-space: nowrap;
+	}
+
+	.prop-list {
+		width: 320px;
+		padding-top: 6px;
+
+		&__title {
+			min-width: 276px;
+		}
+	}
+
+	.pictures-list {
+		order: 2;
+		justify-content: flex-start;
+
+		&__item {
+			margin-right: 15px;
+		}
+	}
+	.card {
+		width: 100%;
+		padding-right: 20px;
+		padding-bottom: 29px;
+    margin-bottom: 22px;
+
+		&__price {
+			margin: 0;
+			height: auto;
+			justify-content: center;
+			padding-bottom: 20px;
+		}
+
+		&__outdated-price {
+			margin-bottom: 19px;
+		}
+
+		&__photo-wrapper {
+			margin-bottom: 0;
+			margin-right: 34px;
+			text-align: left;
+		}
+
+		&__image {
+			margin-bottom: 14px;
+			margin-left: 4px;
+		}
+
+		&__sticker {
+			top: 37px;
+			left: -28px;
+		}
+
+		&__title {
+			letter-spacing: -0.64px;
+			height: 27px;
+		}
+
+		&__wrapper {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		&__inner {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+
+		&__actions {
+			width: 130px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__link--details {
+			order: -1;
+		}
+
+	}
+}

@@ -1,0 +1,32 @@
+{% if not(title) %}
+{% set title = "Default title" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/main.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap&subset=cyrillic" rel="stylesheet" />
+  <title>{{ title }}</title>
+</head>
+
+<body>
+
+
+  {% include "../layout/header.html" %}
+
+  {% block content %}{% endblock %}
+
+  {% include "../layout/footer.html" %}
+
+  {% include "../components/popup.html" %}
+
+
+  <script src="js/main.min.js"></script>
+
+</body>
+</html>
