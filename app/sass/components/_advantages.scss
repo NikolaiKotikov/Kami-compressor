@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 72px;
+  @include bp(830) {
+    justify-content: space-between;
+  }
   li {
     display: flex;
     width: 209px;
+
     height: 112px;
 
     background-color: #ffffff;
@@ -13,6 +17,11 @@
 
     &:hover {
       box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    @include bp(1200) {
+      width: 22.4%;
+      max-width: 209px;
     }
   }
 
@@ -28,6 +37,12 @@
     & > img {
       position: absolute;
       left: -20px;
+      @include bp(900) {
+        left: -15px;
+      }
+      @include bp(800) {
+        left: -10px;
+      }
     }
   }
 }

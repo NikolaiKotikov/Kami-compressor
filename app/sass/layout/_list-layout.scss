@@ -6,6 +6,10 @@
 
     .prop-list__title {
       min-width: 262px;
+      @include bp(1200) {
+        width: 92.5%;
+        min-width: 223px;
+      }
     }
   }
 
@@ -29,6 +33,14 @@
 
     &__title {
       min-width: 276px;
+
+      @include bp(1200) {
+        min-width: 92.5%;
+      }
+    }
+    @include bp(1200) {
+      width: 37%;
+      min-width: 253px;
     }
   }
 

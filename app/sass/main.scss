@@ -6,59 +6,6 @@
 @import "layout/**/*.scss";
 @import "components/**/*.scss";
 
-.header {
-  margin-bottom: 31px;
-  padding-top: 20px;
-  &__nav {
-    min-width: 500px;
-  }
-
-  &__top {
-    display: flex;
-    margin-bottom: 8px;
-  }
-
-  &__middle {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 20px;
-  }
-
-  &__info {
-    min-width: 285px;
-    margin-left: auto;
-  }
-
-  &__logo {
-    margin-right: 20px;
-  }
-
-  &__search {
-    position: relative;
-
-    width: 390px;
-    height: 46px;
-  }
-
-  &__catalog-menu {
-    position: relative;
-    z-index: 500;
-    &:hover {
-      .header__catalog-list {
-        display: block;
-      }
-    }
-  }
-
-  &__catalog-list {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: none;
-  }
-}
-
 .main {
   margin-bottom: 75px;
 }
@@ -360,6 +307,10 @@
     border: none;
     border-radius: 23px;
     outline: none;
+
+    @include bp(1200) {
+      width: 56px;
+    }
     &:hover,
     &:focus {
       background-image: linear-gradient(-53deg, #014a88 0%, $accent-color 100%);
@@ -528,6 +479,10 @@
 
   list-style: none;
 
+  @include bp(1200) {
+    display: none;
+  }
+
   &__item {
     font-weight: 700;
     letter-spacing: -0.45px;
@@ -611,6 +566,10 @@
 
   background-color: #ffffff;
   border-radius: 33px;
+
+  @include bp(1200) {
+    display: none;
+  }
 
   &__item {
     display: flex;
@@ -1051,6 +1010,12 @@
   margin-bottom: 57px;
   padding-right: 15px;
   padding-left: 15px;
+  position: relative;
+
+  @include bp(1200) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 
   &__form {
     width: 225px;
@@ -1061,6 +1026,23 @@
     background-color: #ffffff;
     border: 2px solid #f5f5f5;
     border-radius: 20px;
+
+    @include bp(1200) {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      top: 35px;
+      left: 10px;
+      width: 47.5%;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 23px;
+      padding-left: 10%;
+      padding-right: 15%;
+      padding-top: 80px;
+    }
+    @media (min-width: 1201px) {
+      display: block !important;
+    }
   }
 }
 
@@ -1342,6 +1324,8 @@ a.ui-button:active,
 .results {
   width: 907px;
   padding-top: 20px;
+  display: flex;
+  flex-direction: column;
   &__settings {
     margin-bottom: 26px;
   }
@@ -1355,6 +1339,10 @@ a.ui-button:active,
       width: 284px;
       height: 0;
     }
+  }
+
+  @include bp(1200) {
+    width: 100%;
   }
 }
 
@@ -1389,6 +1377,9 @@ a.ui-button:active,
 
   color: #969696;
   letter-spacing: -0.39px;
+  @include bp(1200) {
+    display: none;
+  }
 }
 
 .filters-list {
@@ -1404,6 +1395,7 @@ a.ui-button:active,
 
   background-color: #f5f5f5;
   border-radius: 26px;
+  z-index: 100;
 
   &__item {
     &:not(:last-child) {
@@ -1427,6 +1419,35 @@ a.ui-button:active,
         border: none;
       }
     }
+    &:not(:first-child) {
+      @include bp(1200) {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        margin-top: 35px;
+      }
+    }
+    &:first-child {
+      @include bp(1200) {
+        margin-right: 30px;
+        order: -10;
+      }
+    }
+  }
+
+  @include bp(1200) {
+    .filters-list__item--active {
+      width: auto;
+      order: -8;
+      margin-top: 0;
+      word-break: break-word;
+    }
+  }
+
+  @include bp(826) {
+    .filters-list__item--active {
+      max-width: 120px;
+    }
   }
 
   &__link {
@@ -1437,6 +1458,120 @@ a.ui-button:active,
     color: #505050;
 
     border-bottom: 1px solid #969696;
+  }
+  @include bp(1200) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-wrap: wrap;
+    border: none;
+    height: 53px;
+    overflow: hidden;
+    transition: all 0.25s ease-in;
+  }
+  &::before {
+    @include bp(1200) {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 53px;
+      border-radius: 26px;
+      border: 2px solid #f5f5f5;
+      background: transparent;
+    }
+  }
+}
+
+.filters-toggler {
+  display: none;
+  @include bp(1200) {
+    display: block;
+    position: absolute;
+    right: 29px;
+    top: 23px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../img/arrow-down.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 9px;
+    z-index: 100;
+    outline: none;
+  }
+
+  &--active {
+    transform: rotate(180deg);
+  }
+}
+
+.filters-list--dropped {
+  height: 232px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  background-color: #ffffff;
+  padding-bottom: 50px;
+  transition: all 0.25s ease-in;
+}
+
+.small-screen-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-wrapper {
+  display: none;
+  @include bp(1200) {
+    display: block;
+    border-radius: 26px;
+    background-color: #f5f5f5;
+    transition: background-color 0.25s ease-in;
+    width: 48.6%;
+    height: 53px;
+    text-align: center;
+    letter-spacing: -0.39px;
+    font-weight: 700;
+    color: #969696;
+    z-index: 200;
+  }
+}
+
+.form-wrapper--active {
+  border-radius: 23px;
+  background-color: #ffffff;
+  border: 2px solid #f5f5f5;
+  transition: background-color 0.25s ease-in;
+  & > p {
+    color: #005aa6;
+    & > button {
+      display: inline-block;
+    }
+  }
+
+}
+
+.form-wrapper__close {
+  display: none;
+  border: none;
+  background-color: transparent;
+  width: 13px;
+  height: 13px;
+  background-image: url(../img/close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 15px;
+}
+
+.filters-list-wrapper {
+  width: 100%;
+  @include bp(1200) {
+    width: 48.6%;
+    position: relative;
+    height: 53px;
+    margin-bottom: 15px;
   }
 }
 
@@ -1472,7 +1607,6 @@ a.ui-button:active,
     letter-spacing: -0.44px;
 
     -webkit-line-clamp: 2;
-    ;
   }
 
   &__model {
@@ -1559,10 +1693,20 @@ a.ui-button:active,
   &__no-price {
     display: none;
 
+    & > br {
+      display: none;
+    }
+
     font-weight: 700;
     font-size: 25px;
     color: #141414;
     letter-spacing: -0.61px;
+    @include bp(815) {
+      text-align: center;
+      & > br {
+        display: block;
+      }
+    }
   }
 
   &__sticker {
@@ -1644,7 +1788,6 @@ a.ui-button:active,
     }
   }
 }
-
 
 .prop-list {
   width: 100%;

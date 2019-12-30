@@ -64,7 +64,11 @@ input[type="radio"].visually-hidden {
 }
 
 .container {
-  width: $content-size;
+  max-width: $content-size;
   margin: 0 auto;
   padding: 0 $gutter;
+
+  @include bp(1200) {
+    padding: 0 10px;
+  }
 }
