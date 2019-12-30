@@ -38,6 +38,9 @@
 
     @include bp(1200) {
       align-items: center;
+      justify-content: space-between;
+      padding-top: 7px;
+      padding-bottom: 7px;
     }
   }
 
@@ -52,6 +55,7 @@
     @include bp(1200) {
       width: 110px;
       height: 30px;
+      margin: 0 4%;
     }
   }
 
@@ -63,6 +67,7 @@
 
     @include bp(1200) {
       height: 36px;
+      width: 55%;
     }
   }
 
@@ -87,5 +92,18 @@
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
     border-radius: 23px;
     background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 666;
+    padding-top: 0;
+  }
+}
+
+.small-icons {
+  @include bp(1200) {
+    width: 17%;
+    display: flex;
+    justify-content: space-around;
   }
 }

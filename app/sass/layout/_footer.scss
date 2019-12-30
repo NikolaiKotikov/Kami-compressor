@@ -9,6 +9,7 @@
   }
   img {
     margin-bottom: 22px;
+    margin-right: 48px;
   }
   a {
     display: block;
@@ -78,21 +79,36 @@
         color: $accent-color;
       }
     }
+    @include bp(1200) {
+      width: 70%;
+    }
   }
 
   .info {
-    width: 386px;
+    width: 260px;
+    @include bp(1200) {
+      width: 30%;
+    }
   }
 
   .nav {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding-top: 28px;
 
     .main-nav {
-      width: 82%;
-      margin-bottom: 38px;
+      width: 723px;
+      display: flex;
+      align-items: center;
+      &__list {
+        @include bp(1200) {
+          max-width: 723px;
+        }
+      }
+      @include bp(1200) {
+        width: 100%;
+        margin-bottom: 45px;
+      }
     }
 
     .license {
@@ -121,6 +137,10 @@
         &:hover {
           border-color: $accent-color;
         }
+      }
+      @include bp(1200) {
+        width: 100%;
+        margin: 30px 0 0 auto;
       }
     }
   }
