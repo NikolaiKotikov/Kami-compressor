@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	$(document).keyup(function (e) {
 		if (e.keyCode == 27) {
-			$(".popup").fadeOut();
+			$(".popup-city").fadeOut();
 			$(".search__preview").slideUp();
 		}
 	});
@@ -15,13 +15,38 @@ $(document).ready(function () {
 	});
 
 	$(".popup-city__close-button").click(function () {
-		$(".popup").fadeOut();
+		$(".popup-city").fadeOut();
+		$(".services").fadeOut();
+		$(".popup-background").fadeOut();
 	});
 
 	$(".location__city").click(function (e) {
 		e.preventDefault();
-		$(".popup").fadeIn();
+		$(".popup-city").show();
+		$(".popup-background").fadeIn();
+		$(".burger-menu").hide();
 	});
+
+	$(".back").click(function() {
+		$(".popup-city").hide();
+		$(".services").hide();
+		$(".burger-menu").show();
+	})
+
+	$(".burger-menu__about-link--services").click(function() {
+		$(".services").show();
+		$(".burger-menu").hide();
+	})
+
+	$(".burger-menu__close-button").click(function() {
+		$(".popup-background").fadeOut();
+		$(".burger-menu").fadeOut();
+	})
+
+	$(".header__open-menu").click(function() {
+		$(".popup-background").fadeIn();
+		$(".burger-menu").fadeIn();
+	})
 
 	$(window).scroll(function () {
 		if ($(window).scrollTop() >= 60 && $(window).width() >= 1200) {

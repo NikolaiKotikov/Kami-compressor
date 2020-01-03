@@ -84,6 +84,11 @@
     &__sticker {
       top: 37px;
       left: -28px;
+
+      @include bp(1200) {
+        top: 49px;
+        left: -6px;
+      }
     }
 
     &__title {
