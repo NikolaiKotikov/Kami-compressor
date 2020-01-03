@@ -4,13 +4,27 @@
   vertical-align: middle;
 }
 
-.burger-menu {
+.burger-menu-wrapper {
   display: none;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   z-index: 1666;
   top: 0;
   left: 0;
   width: 348px;
+  overflow: auto;
+  @include bp(768) {
+    width: 100%;
+  }
+}
+
+.burger-menu {
+  display: block;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
   min-height: 937px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 23px;
@@ -116,7 +130,5 @@
       margin-bottom: 8px;
     }
   }
-  @include bp(768) {
-    width: 100%;
-  }
+
 }
