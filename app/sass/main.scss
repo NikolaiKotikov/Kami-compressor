@@ -8,6 +8,9 @@
 
 .main {
   margin-bottom: 75px;
+  @include bp(768) {
+    margin-bottom: 50px;
+  }
 }
 
 .header.header--sticky {
@@ -295,6 +298,9 @@
       text-transform: uppercase;
       letter-spacing: -0.4px;
     }
+    @include bp(768) {
+      display: none;
+    }
   }
 
   &__button {
@@ -320,10 +326,17 @@
     &:focus {
       background-image: linear-gradient(-53deg, #014a88 0%, $accent-color 100%);
     }
+
+    @include bp(768) {
+      background: transparent;
+    }
   }
 
   &__icon {
     fill: #ffffff;
+    @include bp(768) {
+      fill:#969696;
+    }
   }
 
   &__preview {
@@ -737,6 +750,9 @@
     min-height: 937px;
     border-radius: 23px;
   }
+  @include bp(768) {
+    width: 100%;
+  }
 }
 
 .back {
@@ -923,6 +939,11 @@
         }
       }
     }
+    &:nth-last-child(2) {
+      @include bp(768) {
+        display: none;
+      }
+    }
   }
 
   &__link {
@@ -968,7 +989,6 @@
   }
   &__item {
     position: relative;
-    position: relative;
 
     width: 48.7%;
     margin-bottom: 33px;
@@ -982,6 +1002,10 @@
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
+
+    @include bp(768) {
+      width: 100%;
+    }
   }
   &__link {
     position: absolute;
@@ -1005,6 +1029,9 @@
   }
   &__title {
     font-weight: 700;
+    @include bp(768) {
+      align-self: flex-start;
+    }
 
     &--uppered {
       text-transform: uppercase;
@@ -1015,9 +1042,22 @@
     float: left;
     margin-right: 29px;
     margin-left: 16px;
+    @include bp(768) {
+      margin: 0;
+      margin-bottom: 15px;
+    }
   }
   &__description {
     line-height: 1.5;
+    @include bp(768) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & > br {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1077,6 +1117,12 @@
 
 .tags {
   position: relative;
+  @include bp(1200) {
+    padding: 0 30px;
+  }
+  @include bp(768) {
+    padding: 0 50px;
+  }
 }
 
 .tags__button {
@@ -1103,13 +1149,21 @@
     right: 5px;
 
     transform: rotate(-90deg);
+
+    @include bp(1200) {
+      right: -2px;
+    }
   }
 
   &--prev {
     left: 5px;
 
     transform: rotate(90deg);
+    @include bp(1200) {
+      left: -2px;
+    }
   }
+
 }
 
 .filters {
@@ -1151,6 +1205,23 @@
     }
     @media (min-width: 1201px) {
       display: block !important;
+    }
+
+    @include bp(768) {
+      z-index: 166;
+      width: 97%;
+      padding-right: 65%;
+    }
+    @include bp(620) {
+      width: 96%;
+    }
+
+    @include bp(460) {
+      width: 95%;
+    }
+
+    @include bp(360) {
+      width: 94%;
     }
   }
 }
@@ -1448,6 +1519,11 @@ a.ui-button:active,
       width: 284px;
       height: 0;
     }
+
+    @include bp(1200) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   @include bp(1200) {
@@ -1541,6 +1617,9 @@ a.ui-button:active,
         margin-right: 30px;
         order: -10;
       }
+      @include bp(768) {
+        margin-right: 9px;
+      }
     }
   }
 
@@ -1591,6 +1670,10 @@ a.ui-button:active,
       background: transparent;
     }
   }
+
+  @include bp(768) {
+    padding-left: 14px;
+  }
 }
 
 .filters-toggler {
@@ -1611,6 +1694,10 @@ a.ui-button:active,
     outline: none;
   }
 
+  @include bp(768) {
+    right: 8px;
+  }
+
   &--active {
     transform: rotate(180deg);
   }
@@ -1628,6 +1715,9 @@ a.ui-button:active,
 .small-screen-wrapper {
   display: flex;
   justify-content: space-between;
+  @include bp(768) {
+    flex-wrap: wrap;
+  }
 }
 
 .form-wrapper {
@@ -1644,6 +1734,10 @@ a.ui-button:active,
     font-weight: 700;
     color: #969696;
     z-index: 200;
+  }
+  @include bp(768) {
+    width: 100%;
+    margin-bottom: 15px;
   }
 }
 
@@ -1680,6 +1774,9 @@ a.ui-button:active,
     position: relative;
     height: 53px;
     margin-bottom: 15px;
+  }
+  @include bp(768) {
+    width: 100%;
   }
 }
 

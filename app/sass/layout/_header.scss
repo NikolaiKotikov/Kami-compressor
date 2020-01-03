@@ -58,6 +58,11 @@
       height: 30px;
       margin: 0 4%;
     }
+
+    @include bp(768) {
+      width: 104px;
+      height: 28px;
+    }
   }
 
   &__search {
@@ -106,5 +111,12 @@
     width: 17%;
     display: flex;
     justify-content: space-around;
+  }
+  @include bp(768) {
+    width: auto;
+    margin-right: 15px;
+    & > a {
+      margin-left: 13px;
+    }
   }
 }

@@ -12,6 +12,10 @@
 
     border-bottom: 1px solid $accent-color;
   }
+  @include bp(768) {
+    flex-direction: column;
+align-items: center;
+  }
 }
 
 .pagination {
@@ -27,5 +31,14 @@
     &:focus {
       fill: $accent-color;
     }
+  }
+  @include bp(768) {
+    margin: 0;
+  }
+}
+
+.show-more {
+  @include bp(768) {
+    margin-bottom: 40px;
   }
 }

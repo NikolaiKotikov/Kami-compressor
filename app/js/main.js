@@ -18,7 +18,13 @@ $(document).ready(function () {
 		$(".popup-city").fadeOut();
 		$(".services").fadeOut();
 		$(".popup-background").fadeOut();
+		$(".breadcrumbs-menu").fadeOut();
 	});
+
+	$(".breadcrumbs__item--small-only").click(function() {
+		$(".popup-background").fadeIn();
+		$(".breadcrumbs-menu").fadeIn();
+	})
 
 	$(".location__city").click(function (e) {
 		e.preventDefault();
@@ -65,11 +71,13 @@ $(document).ready(function () {
 	});
 
 	$(window).resize(function () {
-		if ($(window).width() <= 1200) {
+		if ($(window).width() <= 1200 && $(window).width() > 768) {
 			$("#different-layout").prop('className', 'results results--list');
 			$(".prop-list__title--productivity").each(function () {
 				$(this).html("Производительность <b>м&#179;/мин</b>");
 			});
+		} else if ($(window).width() <= 768) {
+			$("#different-layout").prop('className', 'results results--card');
 		} else {
 			$("#different-layout").prop('className', 'results results--card');
 			$('.filters-list').removeClass('filters-list--dropped');
@@ -79,9 +87,15 @@ $(document).ready(function () {
 		}
 	});
 
+
+
 	if ($(window).width() < 1200) {
 		$("#different-layout").prop('className', 'results results--list');
 	} else {
+		$("#different-layout").prop('className', 'results results--card');
+	}
+
+	if ($(window).width() <= 768) {
 		$("#different-layout").prop('className', 'results results--card');
 	}
 

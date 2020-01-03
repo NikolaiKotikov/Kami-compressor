@@ -116,4 +116,7 @@
       margin-bottom: 8px;
     }
   }
+  @include bp(768) {
+    width: 100%;
+  }
 }

@@ -1,4 +1,4 @@
-.services {
+.breadcrumbs-menu {
   display: none;
   width: 348px;
   height: 322px;
@@ -11,10 +11,6 @@
   top: 0;
   left: 0;
   position: absolute;
-
-  .back {
-    margin-bottom: 23px;
-  }
 
   &__title {
     color: #505050;
