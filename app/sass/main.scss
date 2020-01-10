@@ -8,6 +8,9 @@
 
 .main {
   margin-bottom: 75px;
+  @include bp(1200) {
+    padding-top: 72px;
+  }
   @include bp(768) {
     margin-bottom: 50px;
   }

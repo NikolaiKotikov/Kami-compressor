@@ -96,9 +96,11 @@
   }
   @include bp(1200) {
     background-color: #ffffff;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    height: 50px;
     z-index: 666;
     padding-top: 0;
     &>.container {
