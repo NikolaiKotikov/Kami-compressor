@@ -95,14 +95,16 @@
     display: none;
   }
   @include bp(1200) {
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
-    border-radius: 23px;
     background-color: #ffffff;
     position: sticky;
     top: 0;
     left: 0;
     z-index: 666;
     padding-top: 0;
+    &>.container {
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 23px;
+    }
   }
 }
 
