@@ -1381,6 +1381,7 @@ summary::marker {
   color: #969696;
   &--price {
     font-size: 14px;
+    font-family: 'PT Sans', serif;
   }
 }
 
@@ -1911,11 +1912,21 @@ a.ui-button:active,
 
       background-color: #969696;
     }
+
+    &::after {
+      content: ' ₽';
+      font-family: 'PT Sans', serif;
+
+    }
   }
 
   &__actual-price {
     font-size: 25px;
     letter-spacing: -0.61px;
+    &::after {
+      content: ' ₽';
+      font-family: 'PT Sans', serif;
+    }
   }
 
   &__no-price {
