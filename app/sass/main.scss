@@ -1928,7 +1928,7 @@ a.ui-button:active,
     font-size: 25px;
     color: #141414;
     letter-spacing: -0.61px;
-    @include bp(815) {
+    @include bp(1200) {
       text-align: center;
       & > br {
         display: block;

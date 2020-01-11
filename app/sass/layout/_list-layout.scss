@@ -57,6 +57,9 @@
     margin-bottom: 22px;
     padding-right: 20px;
     padding-bottom: 29px;
+    @include bp(1200) {
+      width: 749px;
+    }
 
     &__price {
       justify-content: center;
