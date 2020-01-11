@@ -93,6 +93,7 @@
       &:hover {
         font-weight: 700;
         color: $accent-color;
+        letter-spacing: -0.9px;
       }
     }
     @include bp(1200) {
