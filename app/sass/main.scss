@@ -702,6 +702,7 @@
     @include bp(1200) {
       top: 12px;
       left: 12px;
+      right: auto;
       & > .close-button__icon {
         width: 30px;
         height: 30px;
@@ -1787,7 +1788,6 @@ a.ui-button:active,
   background-image: url(../img/close.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   margin-left: 15px;
 }
 
