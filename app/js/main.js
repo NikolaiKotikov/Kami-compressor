@@ -335,4 +335,10 @@ $(document).ready(function () {
 		$(this).toggleClass('form-wrapper--active');
 		$(".form").slideToggle();
 	})
+	$(".search__close-button").click(function() {
+		$('.header__search').slideUp();
+	})
+	$('.header__search-button').click(function() {
+		$('.header__search').slideDown();
+	})
 });

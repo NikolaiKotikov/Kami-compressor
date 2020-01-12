@@ -272,6 +272,23 @@
   height: 100%;
   overflow: hidden;
 
+  &__close-button {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+
+    @include bp(768) {
+      display: block;
+    }
+
+    & > .close-button__icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   &__field {
     position: absolute;
 
@@ -302,7 +319,13 @@
       letter-spacing: -0.4px;
     }
     @include bp(768) {
-      display: none;
+
+      padding-left: 50px;
+      padding-right: 50px;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
+      &::placeholder {
+        font-size: 0;
+      }
     }
   }
 
@@ -332,6 +355,12 @@
 
     @include bp(768) {
       background: transparent;
+      left: 0;
+      right: auto;
+      &:hover,
+      &:focus {
+        background: transparent;
+      }
     }
   }
 
@@ -452,6 +481,10 @@
 
   @include bp(1200) {
     width: calc(100% + 100px);
+  }
+
+  @include bp(768) {
+    width: 100%;
   }
 }
 
