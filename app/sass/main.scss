@@ -399,6 +399,14 @@
     position: absolute;
     bottom: 25px;
     left: 45px;
+    @include bp(768) {
+      position: static;
+      left: auto;
+      bottom: auto;
+      margin-top: auto;
+      margin-bottom: 0;
+      padding: 20px 0;
+    }
   }
 
   &__category-list {
@@ -440,6 +448,9 @@
 
   &__items-list {
     padding-left: 6px;
+    @include bp(768) {
+      overflow: auto;
+    }
   }
 
   &__item {
@@ -450,6 +461,9 @@
     margin-bottom: 18px;
     @include bp(1200) {
       justify-content: flex-start;
+    }
+    @include bp(768) {
+      height: auto;
     }
   }
 
@@ -471,6 +485,12 @@
     letter-spacing: -0.4px;
 
     -webkit-line-clamp: 2;
+
+    @include bp(768) {
+      width: auto;
+      max-height: initial;
+      -webkit-line-clamp: 4;
+    }
   }
 
   &__close-button {
@@ -485,6 +505,13 @@
 
   @include bp(768) {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 0;
+    top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
