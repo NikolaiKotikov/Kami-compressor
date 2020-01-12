@@ -339,14 +339,6 @@ $(document).ready(function () {
 		$('.header__search').removeClass('show');
 		$('.preview').hide();
 	})
-	// $(window).resize(function () {
-	// 	if ($(window).width() > 768) {
-	// 		$('.header__search').show();
-	// 	}
-	// })
-	// if ($(window).width() > 768) {
-	// 	$('.header__search').show();
-	// }
 	$('.header__search-button').click(function () {
 		$('.header__search').addClass('show');
 	})
