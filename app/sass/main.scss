@@ -523,6 +523,7 @@
 }
 
 .close-button {
+  cursor: pointer;
   background: none;
   border: none;
   outline: none;
@@ -858,6 +859,7 @@
 
 .back {
   display: none;
+  cursor: pointer;
 
   @include bp(1200) {
     display: block;
@@ -1783,6 +1785,7 @@ a.ui-button:active,
 
 .filters-toggler {
   display: none;
+  cursor: pointer;
   @include bp(1200) {
     display: block;
     position: absolute;
@@ -1826,6 +1829,7 @@ a.ui-button:active,
 }
 
 .form-wrapper {
+  cursor: pointer;
   display: none;
   @include bp(1200) {
     display: block;
@@ -1860,6 +1864,7 @@ a.ui-button:active,
 }
 
 .form-wrapper__close {
+  cursor: pointer;
   display: none;
   border: none;
   background-color: transparent;
