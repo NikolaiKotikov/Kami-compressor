@@ -476,6 +476,11 @@
   }
 
   &__title {
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+    cursor: pointer;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     width: 402px;
