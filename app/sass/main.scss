@@ -331,6 +331,7 @@
 
   &__button {
     position: absolute;
+    cursor: pointer;
     top: 0;
     right: 0;
     bottom: 0;
@@ -1228,6 +1229,7 @@
 .tags__button {
   position: absolute;
   top: 5px;
+  cursor: pointer;
 
   margin: 0;
   padding: 0;
@@ -1487,6 +1489,7 @@ summary::marker {
 
 .ui-slider-horizontal .ui-slider-range {
   background-color: $accent-color;
+  cursor: pointer;
 }
 .ui-widget.ui-widget-content {
   border: none;
@@ -1552,6 +1555,7 @@ a.ui-button:active,
 
 .checkbox-label {
   position: relative;
+  cursor: pointer;
 
   display: block;
   margin-bottom: 8px;
