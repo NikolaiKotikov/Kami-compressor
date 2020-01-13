@@ -19,11 +19,13 @@ $(document).ready(function () {
 		$(".services").fadeOut();
 		$(".popup-background").fadeOut();
 		$(".breadcrumbs-menu").fadeOut();
+		$('body').removeClass('hide-overflow');
 	});
 
 	$(".breadcrumbs__item--small-only").click(function () {
 		$(".popup-background").fadeIn();
 		$(".breadcrumbs-menu").fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 
 	$(".location__city").click(function (e) {
@@ -31,6 +33,7 @@ $(document).ready(function () {
 		$(".popup-city-wrapper").show();
 		$(".popup-background").fadeIn();
 		$(".burger-menu-wrapper").hide();
+		$('body').addClass('hide-overflow');
 	});
 
 	$(".back").click(function () {
@@ -47,11 +50,13 @@ $(document).ready(function () {
 	$(".burger-menu__close-button").click(function () {
 		$(".popup-background").fadeOut();
 		$(".burger-menu-wrapper").fadeOut();
+		$('body').removeClass('hide-overflow');
 	})
 
 	$(".header__open-menu").click(function () {
 		$(".popup-background").fadeIn();
 		$(".burger-menu-wrapper").fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 
 	$(window).scroll(function () {
@@ -341,5 +346,13 @@ $(document).ready(function () {
 	})
 	$('.header__search-button').click(function () {
 		$('.header__search').addClass('show');
+	})
+	$('.popup-background').click(function() {
+		$('.burger-menu-wrapper').fadeOut();
+		$(".breadcrumbs-menu").fadeOut();
+		$('.services').fadeOut();
+		$('.popup-city-wrapper').fadeOut();
+		$('.popup-background').fadeOut();
+		$('body').removeClass('hide-overflow');
 	})
 });

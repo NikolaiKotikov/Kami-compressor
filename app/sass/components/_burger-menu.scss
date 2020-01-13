@@ -12,25 +12,27 @@
   top: 0;
   left: 0;
   width: 348px;
-  overflow: auto;
+  overflow: hidden;
+  border-radius: 23px;
   @include bp(768) {
     width: 100%;
   }
 }
 
 .burger-menu {
-  display: block;
-  position: absolute;
-
-  top: 0;
-  left: 0;
   width: 100%;
-  min-height: 937px;
+  height: 937px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border-radius: 23px;
   background-color: #ffffff;
   padding-top: 70px;
   padding-left: 45px;
+
+  &__content {
+    overflow-y: auto;
+    max-height: calc(100vh - 75px);
+    padding-bottom: 20px;
+  }
 
   &__close-button {
     position: absolute;
@@ -42,10 +44,8 @@
     }
   }
 
-  & > {
-    ul {
-      list-style: none;
-    }
+  ul {
+    list-style: none;
   }
 
   &__location {
@@ -130,5 +130,4 @@
       margin-bottom: 8px;
     }
   }
-
 }
