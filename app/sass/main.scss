@@ -1251,7 +1251,7 @@
     transform: rotate(-90deg);
 
     @include bp(1200) {
-      right: -2px;
+      right: 1px;
     }
   }
 
@@ -1260,7 +1260,7 @@
 
     transform: rotate(90deg);
     @include bp(1200) {
-      left: -2px;
+      left: 1px;
     }
   }
 
