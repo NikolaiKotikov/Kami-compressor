@@ -128,7 +128,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 42.438px;
+    height: 50px;
     border-bottom-right-radius: 23px;
     border-bottom-left-radius: 23px;
     z-index: 666;
@@ -137,6 +137,10 @@
       box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.05);
       border-radius: 23px;
     }
+  }
+
+  @include bp(768) {
+    height: 42.438px;
   }
 }
 
