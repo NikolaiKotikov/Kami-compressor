@@ -75,22 +75,38 @@ $(document).ready(function () {
 		}
 	});
 
+	$(window).resize(function() {
+		if ($(window).width() <= 350) {
+			$('.filters-list__link--prod').html('Произв-ть')
+		} else {
+			$('.filters-list__link--prod').html('Производительность')
+		}
+	})
+
+	if ($(window).width() <= 350) {
+		$('.filters-list__link--prod').html('Произв-ть')
+	} else {
+		$('.filters-list__link--prod').html('Производительность')
+	}
+
 	$(window).resize(function () {
-		if ($(window).width() <= 1200 && $(window).width() > 768) {
+		if ($(window).width() <= 1200 && $(window).width() >= 768) {
 			$("#different-layout").prop('className', 'results results--list');
 			$(".prop-list__title--productivity").each(function () {
 				$(this).html("Производительность <b>м&#179;/мин</b>");
 			});
-		} else if ($(window).width() <= 768) {
+		} else if ($(window).width() < 768) {
 			$("#different-layout").prop('className', 'results results--card');
-		} else {
-			$("#different-layout").prop('className', 'results results--card');
-			$('.filters-list').removeClass('filters-list--dropped');
 			$(".prop-list__title--productivity").each(function () {
 				$(this).html("Произв-ть <b>м&#179;/мин</b>");
 			});
+		} else {
+			$("#different-layout").prop('className', 'results results--card');
+			$('.filters-list').removeClass('filters-list--dropped');
 		}
 	});
+
+
 
 
 
