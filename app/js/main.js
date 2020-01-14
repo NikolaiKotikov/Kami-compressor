@@ -347,12 +347,73 @@ $(document).ready(function () {
 	$('.header__search-button').click(function () {
 		$('.header__search').addClass('show');
 	})
-	$('.popup-background').click(function() {
+	$('.popup-background').click(function () {
 		$('.burger-menu-wrapper').fadeOut();
 		$(".breadcrumbs-menu").fadeOut();
 		$('.services').fadeOut();
 		$('.popup-city-wrapper').fadeOut();
+		$('#callback-form').fadeOut();
 		$('.popup-background').fadeOut();
 		$('body').removeClass('hide-overflow');
+		$('#callback-name').val('');
+		$('#callback-phone').val('');
+		$('.phone-error').text('')
+		$('.name-error').text('')
+	})
+	$("#callback-phone").mask("+7 (999) 999-99-99",{autoclear: false});
+	$('#callback-name').blur(function () {
+		if (this.value == '') {
+			$('.name-error').text('Необходимо заполнить данное поле')
+		} else {$('.name-error').text('')}
+	})
+	$('#callback-name').focus(function () {
+		$('.name-error').text('')
+	})
+	$('#callback-phone').blur(function () {
+		if (this.value == '') {
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('#callback-name').bind('input' ,function() {
+		if(this.value != '') {
+			$('.name-error').text('')
+		}
+	})
+	$('#callback-phone').focus(function () {
+		$('.phone-error').text('')
+	})
+	$('#callback-form').submit(function(e) {
+		if ($('#callback-name').val() == '' || $('#callback-name').val() == undefined) {
+			e.preventDefault();
+			$('.name-error').text('Необходимо заполнить данное поле')
+		}
+		if ($('#callback-phone').val() == '' || $('#callback-phone').val() == undefined) {
+			e.preventDefault();
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('.phones-list__cb').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+
+	})
+	$('.callback').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+	})
+	$('.header__call-icon').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+	})
+	$('.callback-form__close-button').click(function() {
+		$('#callback-form').fadeOut();
+		$('.popup-background').fadeOut();
+		$('#callback-name').val('');
+		$('#callback-phone').val('');
+		$('.phone-error').text('')
+		$('.name-error').text('')
 	})
 });
