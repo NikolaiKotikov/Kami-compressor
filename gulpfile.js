@@ -50,12 +50,6 @@ lazyRequireTask("imagemin", "./tasks/imagemin", {
   dst: paths.dst + "/img"
 });
 
-lazyRequireTask("archive", "./tasks/archive", {
-  src: paths.dst + "/**",
-  dst: paths.dst + "/",
-  name: "build.zip"
-});
-
 lazyRequireTask("html", "./tasks/html", {
   src: paths.base + "/html/pages/**",
   dst: paths.dst + "/",
@@ -78,8 +72,7 @@ gulp.task(
   "build",
   gulp.series(
     gulp.series("clean", "copy"),
-    gulp.parallel("imagemin", "svg", "styles:build", "scripts", "html"),
-    "archive"
+    gulp.parallel("imagemin", "svg", "styles:build", "scripts", "html")
   )
 );
 
