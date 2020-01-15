@@ -275,9 +275,12 @@
   &__close-button {
     display: none;
     position: absolute;
-    right: 12px;
-    top: 0;
-    bottom: 0;
+    right: 15px;
+    top: 50%;
+    padding: 0;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
 
     @include bp(768) {
       display: block;
