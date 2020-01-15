@@ -76,6 +76,24 @@ $(document).ready(function () {
 	});
 
 	$(window).resize(function() {
+		if ($(window).width() <= 1200) {
+			$(".header").removeClass("header--sticky");
+			$("body").css("padding-top", "0");
+			$(".header__info")
+			.remove()
+			.appendTo(".header__top");
+		}
+	})
+
+	if ($(window).width() <= 1200) {
+		$(".header").removeClass("header--sticky");
+		$("body").css("padding-top", "0");
+		$(".header__info")
+		.remove()
+		.appendTo(".header__top");
+	}
+
+	$(window).resize(function() {
 		if ($(window).width() <= 350) {
 			$('.filters-list__link--prod').html('Произв-ть')
 		} else {
