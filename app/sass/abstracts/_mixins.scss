@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin bpu($breakpoint) {
+  @media (min-width: $breakpoint + "px") {
+    @content;
+  }
+}

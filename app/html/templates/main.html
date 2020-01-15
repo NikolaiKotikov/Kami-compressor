@@ -8,8 +8,10 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link rel="stylesheet" href="css/main.min.css" />
+	<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap&subset=cyrillic" rel="stylesheet" />
 	<title>{{ title }}</title>
 </head>
@@ -32,6 +34,9 @@
 	{% include "../components/services.html" %}
 
 	{% include "../components/breadcrumbs-menu.html" %}
+
+	{% include "../components/callback-form.html" %}
+
 
 
 	<script src="js/main.min.js"></script>

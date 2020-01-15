@@ -19,11 +19,13 @@ $(document).ready(function () {
 		$(".services").fadeOut();
 		$(".popup-background").fadeOut();
 		$(".breadcrumbs-menu").fadeOut();
+		$('body').removeClass('hide-overflow');
 	});
 
-	$(".breadcrumbs__item--small-only").click(function() {
+	$(".breadcrumbs__item--small-only").click(function () {
 		$(".popup-background").fadeIn();
 		$(".breadcrumbs-menu").fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 
 	$(".location__city").click(function (e) {
@@ -31,27 +33,30 @@ $(document).ready(function () {
 		$(".popup-city-wrapper").show();
 		$(".popup-background").fadeIn();
 		$(".burger-menu-wrapper").hide();
+		$('body').addClass('hide-overflow');
 	});
 
-	$(".back").click(function() {
+	$(".back").click(function () {
 		$(".popup-city-wrapper").hide();
 		$(".services").hide();
 		$(".burger-menu-wrapper").show();
 	})
 
-	$(".burger-menu__about-link--services").click(function() {
+	$(".burger-menu__about-link--services").click(function () {
 		$(".services").show();
 		$(".burger-menu-wrapper").hide();
 	})
 
-	$(".burger-menu__close-button").click(function() {
+	$(".burger-menu__close-button").click(function () {
 		$(".popup-background").fadeOut();
 		$(".burger-menu-wrapper").fadeOut();
+		$('body').removeClass('hide-overflow');
 	})
 
-	$(".header__open-menu").click(function() {
+	$(".header__open-menu").click(function () {
 		$(".popup-background").fadeIn();
 		$(".burger-menu-wrapper").fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 
 	$(window).scroll(function () {
@@ -70,22 +75,56 @@ $(document).ready(function () {
 		}
 	});
 
+	$(window).resize(function() {
+		if ($(window).width() <= 1200) {
+			$(".header").removeClass("header--sticky");
+			$("body").css("padding-top", "0");
+			$(".header__info")
+			.remove()
+			.appendTo(".header__top");
+		}
+	})
+
+	if ($(window).width() <= 1200) {
+		$(".header").removeClass("header--sticky");
+		$("body").css("padding-top", "0");
+		$(".header__info")
+		.remove()
+		.appendTo(".header__top");
+	}
+
+	$(window).resize(function() {
+		if ($(window).width() <= 350) {
+			$('.filters-list__link--prod').html('Произв-ть')
+		} else {
+			$('.filters-list__link--prod').html('Производительность')
+		}
+	})
+
+	if ($(window).width() <= 350) {
+		$('.filters-list__link--prod').html('Произв-ть')
+	} else {
+		$('.filters-list__link--prod').html('Производительность')
+	}
+
 	$(window).resize(function () {
-		if ($(window).width() <= 1200 && $(window).width() > 768) {
+		if ($(window).width() <= 1200 && $(window).width() >= 768) {
 			$("#different-layout").prop('className', 'results results--list');
 			$(".prop-list__title--productivity").each(function () {
 				$(this).html("Производительность <b>м&#179;/мин</b>");
 			});
-		} else if ($(window).width() <= 768) {
+		} else if ($(window).width() < 768) {
 			$("#different-layout").prop('className', 'results results--card');
-		} else {
-			$("#different-layout").prop('className', 'results results--card');
-			$('.filters-list').removeClass('filters-list--dropped');
 			$(".prop-list__title--productivity").each(function () {
 				$(this).html("Произв-ть <b>м&#179;/мин</b>");
 			});
+		} else {
+			$("#different-layout").prop('className', 'results results--card');
+			$('.filters-list').removeClass('filters-list--dropped');
 		}
 	});
+
+
 
 
 
@@ -331,8 +370,84 @@ $(document).ready(function () {
 		$(".filters-list").toggleClass('filters-list--dropped');
 		$(this).toggleClass('filters-toggler--active');
 	})
-	$(".form-wrapper").click(function() {
+	$(".form-wrapper").click(function () {
 		$(this).toggleClass('form-wrapper--active');
 		$(".form").slideToggle();
+	})
+	$(".search__close-button").click(function () {
+		$('.header__search').removeClass('show');
+		$('.preview').hide();
+	})
+	$('.header__search-button').click(function () {
+		$('.header__search').addClass('show');
+	})
+	$('.popup-background').click(function () {
+		$('.burger-menu-wrapper').fadeOut();
+		$(".breadcrumbs-menu").fadeOut();
+		$('.services').fadeOut();
+		$('.popup-city-wrapper').fadeOut();
+		$('#callback-form').fadeOut();
+		$('.popup-background').fadeOut();
+		$('body').removeClass('hide-overflow');
+		$('#callback-name').val('');
+		$('#callback-phone').val('');
+		$('.phone-error').text('')
+		$('.name-error').text('')
+	})
+	$("#callback-phone").mask("+7 (999) 999-99-99",{autoclear: false});
+	$('#callback-name').blur(function () {
+		if (this.value == '') {
+			$('.name-error').text('Необходимо заполнить данное поле')
+		} else {$('.name-error').text('')}
+	})
+	$('#callback-name').focus(function () {
+		$('.name-error').text('')
+	})
+	$('#callback-phone').blur(function () {
+		if (this.value == '') {
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('#callback-name').bind('input' ,function() {
+		if(this.value != '') {
+			$('.name-error').text('')
+		}
+	})
+	$('#callback-phone').focus(function () {
+		$('.phone-error').text('')
+	})
+	$('#callback-form').submit(function(e) {
+		if ($('#callback-name').val() == '' || $('#callback-name').val() == undefined) {
+			e.preventDefault();
+			$('.name-error').text('Необходимо заполнить данное поле')
+		}
+		if ($('#callback-phone').val() == '' || $('#callback-phone').val() == undefined) {
+			e.preventDefault();
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('.phones-list__cb').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+
+	})
+	$('.callback').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+	})
+	$('.header__call-icon').click(function(e) {
+		e.preventDefault();
+		$('#callback-form').fadeIn();
+		$('.popup-background').fadeIn();
+	})
+	$('.callback-form__close-button').click(function() {
+		$('#callback-form').fadeOut();
+		$('.popup-background').fadeOut();
+		$('#callback-name').val('');
+		$('#callback-phone').val('');
+		$('.phone-error').text('')
+		$('.name-error').text('')
 	})
 });

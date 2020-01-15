@@ -20,6 +20,7 @@ lazyRequireTask("scripts", "./tasks/scripts", {
     "node_modules/jquery/dist/jquery.min.js",
     "node_modules/slick-carousel/slick/slick.min.js",
     "app/js/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js",
+    "app/js/libs/digitalBush-jquery.maskedinput-9672630/dist/jquery.maskedinput.min.js",
     "app/js/main.js"
   ],
   dst: paths.dst + "/js/"
@@ -49,12 +50,6 @@ lazyRequireTask("imagemin", "./tasks/imagemin", {
   dst: paths.dst + "/img"
 });
 
-lazyRequireTask("archive", "./tasks/archive", {
-  src: paths.dst + "/**",
-  dst: paths.dst + "/",
-  name: "build.zip"
-});
-
 lazyRequireTask("html", "./tasks/html", {
   src: paths.base + "/html/pages/**",
   dst: paths.dst + "/",
@@ -77,8 +72,7 @@ gulp.task(
   "build",
   gulp.series(
     gulp.series("clean", "copy"),
-    gulp.parallel("imagemin", "svg", "styles:build", "scripts", "html"),
-    "archive"
+    gulp.parallel("imagemin", "svg", "styles:build", "scripts", "html")
   )
 );
 
