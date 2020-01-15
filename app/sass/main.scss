@@ -1740,13 +1740,6 @@ a.ui-button:active,
       width: auto;
       order: -8;
       margin-top: 0;
-      word-break: break-word;
-    }
-  }
-
-  @include bp(826) {
-    .filters-list__item--active {
-      max-width: 120px;
     }
   }
 
