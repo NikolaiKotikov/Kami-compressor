@@ -1322,8 +1322,9 @@
     @include bp(768) {
       z-index: 166;
       width: 97%;
-      padding-right: 65%;
+      padding-right: 0;
     }
+
     @include bp(620) {
       width: 96%;
     }
@@ -1357,6 +1358,9 @@
 
   &__controls {
     margin-bottom: 26px;
+    @include bp(1200) {
+      width: 165px;
+    }
   }
 }
 
@@ -1373,6 +1377,9 @@
     margin-bottom: 10px;
 
     text-align: center;
+    @include bp(1200) {
+      text-align: left;
+    }
   }
 }
 
