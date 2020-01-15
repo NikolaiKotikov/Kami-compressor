@@ -430,17 +430,20 @@ $(document).ready(function () {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
+		$('body').addClass('hide-overflow');
 
 	})
 	$('.callback').click(function(e) {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 	$('.header__call-icon').click(function(e) {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
+		$('body').addClass('hide-overflow');
 	})
 	$('.callback-form__close-button').click(function() {
 		$('#callback-form').fadeOut();
@@ -449,5 +452,6 @@ $(document).ready(function () {
 		$('#callback-phone').val('');
 		$('.phone-error').text('')
 		$('.name-error').text('')
+		$('body').removeClass('hide-overflow');
 	})
 });
