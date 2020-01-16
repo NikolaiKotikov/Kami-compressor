@@ -445,7 +445,7 @@ $(document).ready(function () {
 		$('.popup-background').fadeIn();
 		$('body').addClass('hide-overflow');
 	})
-	$('.callback-form__close-button').click(function() {
+	$('.callback-form__close').click(function() {
 		$('#callback-form').fadeOut();
 		$('.popup-background').fadeOut();
 		$('#callback-name').val('');
