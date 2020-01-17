@@ -24,7 +24,6 @@
 
 .popup-form-field {
   width: 100%;
-  height: 47px;
   border-radius: 23px;
   border: 2px solid #dcdcdc;
   background-color: #ffffff;
@@ -33,7 +32,7 @@
   font-weight: 400;
   font-size: 16px;
   color: #141414;
-  padding: 0 18px;
+  padding: 13px 18px;
 
   &:focus {
     border-color: #005aa6;
@@ -95,7 +94,46 @@
 
 }
 
+.required-icon {
+  position: absolute;
+  color: #ed1c24;
+  top: 16px;
+
+  &--name {
+    left: 95px;
+  }
+
+  &--phone {
+    left: 141px;
+  }
+}
+
+.cost-form {
+  display: none;
+  width: 396px;
+  padding-top: 55px;
+  padding-left: 47px;
+  padding-right: 49px;
+  padding-bottom: 30px;
+
+  @include bp(400) {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__title {
+    margin-left: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__submit {
+    margin-right: 27px;
+  }
+}
+
 .name-error,
+.mail-error,
 .phone-error {
   letter-spacing: -0.3px;
   line-height: 20.11px;
@@ -105,4 +143,25 @@
   position: absolute;
   left: 20px;
   bottom: -20px;
+}
+
+.form-notice {
+  position: relative;
+  line-height: 20.11px;
+  font-size: 12px;
+  color: #969696;
+  padding-left: 10px;
+  vertical-align: middle;
+  letter-spacing: -0.3px;
+  @include bp(360) {
+    float: right;
+  }
+
+  &::before {
+    position: absolute;
+    content: '*';
+    top: -4px;
+    left: 1px;
+    color: #ed1c24;
+  }
 }

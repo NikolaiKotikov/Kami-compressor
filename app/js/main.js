@@ -75,13 +75,13 @@ $(document).ready(function () {
 		}
 	});
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		if ($(window).width() <= 1200) {
 			$(".header").removeClass("header--sticky");
 			$("body").css("padding-top", "0");
 			$(".header__info")
-			.remove()
-			.appendTo(".header__top");
+				.remove()
+				.appendTo(".header__top");
 		}
 	})
 
@@ -89,11 +89,11 @@ $(document).ready(function () {
 		$(".header").removeClass("header--sticky");
 		$("body").css("padding-top", "0");
 		$(".header__info")
-		.remove()
-		.appendTo(".header__top");
+			.remove()
+			.appendTo(".header__top");
 	}
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		if ($(window).width() <= 350) {
 			$('.filters-list__link--prod').html('Произв-ть')
 		} else {
@@ -389,16 +389,19 @@ $(document).ready(function () {
 		$('#callback-form').fadeOut();
 		$('.popup-background').fadeOut();
 		$('body').removeClass('hide-overflow');
+		hideModal("#cost-form");
 		$('#callback-name').val('');
 		$('#callback-phone').val('');
-		$('.phone-error').text('')
-		$('.name-error').text('')
+		$("#cost-mail").val("");
+		$('.phone-error').text('');
+		$('.name-error').text('');
 	})
-	$("#callback-phone").mask("+7 (999) 999-99-99",{autoclear: false});
+
+	$("#callback-phone").mask("+7 (999) 999-99-99", { autoclear: false });
 	$('#callback-name').blur(function () {
 		if (this.value == '') {
 			$('.name-error').text('Необходимо заполнить данное поле')
-		} else {$('.name-error').text('')}
+		} else { $('.name-error').text('') }
 	})
 	$('#callback-name').focus(function () {
 		$('.name-error').text('')
@@ -408,15 +411,15 @@ $(document).ready(function () {
 			$('.phone-error').text('Введите 10 символов')
 		}
 	})
-	$('#callback-name').bind('input' ,function() {
-		if(this.value != '') {
+	$('#callback-name').bind('input', function () {
+		if (this.value != '') {
 			$('.name-error').text('')
 		}
 	})
 	$('#callback-phone').focus(function () {
 		$('.phone-error').text('')
 	})
-	$('#callback-form').submit(function(e) {
+	$('#callback-form').submit(function (e) {
 		if ($('#callback-name').val() == '' || $('#callback-name').val() == undefined) {
 			e.preventDefault();
 			$('.name-error').text('Необходимо заполнить данное поле')
@@ -426,26 +429,26 @@ $(document).ready(function () {
 			$('.phone-error').text('Введите 10 символов')
 		}
 	})
-	$('.phones-list__cb').click(function(e) {
+	$('.phones-list__cb').click(function (e) {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
 		$('body').addClass('hide-overflow');
 
 	})
-	$('.callback').click(function(e) {
+	$('.callback').click(function (e) {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
 		$('body').addClass('hide-overflow');
 	})
-	$('.header__call-icon').click(function(e) {
+	$('.header__call-icon').click(function (e) {
 		e.preventDefault();
 		$('#callback-form').fadeIn();
 		$('.popup-background').fadeIn();
 		$('body').addClass('hide-overflow');
 	})
-	$('.callback-form__close').click(function() {
+	$('.callback-form__close').click(function () {
 		$('#callback-form').fadeOut();
 		$('.popup-background').fadeOut();
 		$('#callback-name').val('');
@@ -454,4 +457,128 @@ $(document).ready(function () {
 		$('.name-error').text('')
 		$('body').removeClass('hide-overflow');
 	})
+	////////////////////////////
+	$(".popup-close").click(function() {
+		hideModal("#cost-form");
+	})
+	$(".card__link--request").each(function() {
+		$(this).click(function(evt) {
+			evt.preventDefault();
+			showModal("#cost-form");
+		})
+	})
+	$("#cost-phone").mask("+7 (999) 999-99-99", { autoclear: false });
+	$('#cost-name').blur(function () {
+		if (this.value == '') {
+			$('.required-icon--name').text('*')
+			$('.name-error').text('Необходимо заполнить данное поле')
+		} else {
+			$('.name-error').text('')
+			$('.required-icon--name').text('')
+		}
+	})
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	$('#cost-mail').bind('input', function () {
+		if (reg.test(this.value) == false) {
+			$('.mail-error').text('Введите латиницей в виде ______@____.__')
+		} else {
+			$('.mail-error').text('')
+		}
+	})
+	$('#cost-mail').blur(function() {
+		if (this.value == '') {
+			$('.mail-error').text('');
+		}
+	})
+	$('#cost-name').focus(function () {
+		$('.name-error').text('')
+	})
+
+	$('#cost-phone').blur(function () {
+		if (this.value == '') {
+			$('.required-icon--phone').text('*')
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('#cost-name').bind('input', function () {
+		if (this.value != '') {
+			$('.name-error').text('')
+			$('.required-icon--name').text('')
+		} else {
+			$('.required-icon--name').text('*')
+		}
+
+	})
+	$('#cost-phone').focus(function () {
+		$('.required-icon--phone').text('')
+		$('.phone-error').text('')
+	})
+	$('#cost-form').submit(function (e) {
+		if ($('#cost-name').val() == '' || $('#cost-name').val() == undefined) {
+			e.preventDefault();
+			$('.name-error').text('Необходимо заполнить данное поле')
+		}
+		if ($('#cost-phone').val() == '' || $('#cost-phone').val() == undefined) {
+			e.preventDefault();
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
 });
+
+/////////// Variables
+
+var body = $('body');
+var phoneErrorItem = $('.phone-error');
+var nameErrorItem = $('.name-error');
+var mailErrorItem = $('.mail-error');
+var popupBackground = $('.popup-background');
+var popupInput = $(".popup-form-field");
+
+/////////// Methods
+
+function showModal(identifyer) {
+	$(identifyer).fadeIn();
+	showOverlay();
+	fixBody();
+}
+function hideModal(identifyer) {
+	$(identifyer).fadeOut();
+	hideOverlay();
+	unfixBody();
+	clearHints();
+	clearInputs();
+}
+
+function showOverlay() {
+	popupBackground.fadeIn();
+}
+function hideOverlay() {
+	popupBackground.fadeOut();
+	clearHints();
+	clearInputs();
+}
+
+function fixBody() {
+	body.addClass('hide-overflow');
+}
+function unfixBody() {
+	body.removeClass('hide-overflow');
+}
+
+function clearHints() {
+	phoneErrorItem.each(function() {
+		$(this).text('');
+	});
+	nameErrorItem.each(function() {
+		$(this).text('');
+	});
+	mailErrorItem.each(function() {
+		$(this).text('');
+	})
+}
+
+function clearInputs() {
+	popupInput.each(function() {
+		$(this).val('');
+	});
+}
