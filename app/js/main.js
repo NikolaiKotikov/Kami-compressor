@@ -389,7 +389,8 @@ $(document).ready(function () {
 		$('#callback-form').fadeOut();
 		$('.popup-background').fadeOut();
 		$('body').removeClass('hide-overflow');
-		hideModal("#cost-form");
+		hideModal(costForm);
+		hideModal(thanksPopup);
 		$('#callback-name').val('');
 		$('#callback-phone').val('');
 		$("#cost-mail").val("");
@@ -420,13 +421,17 @@ $(document).ready(function () {
 		$('.phone-error').text('')
 	})
 	$('#callback-form').submit(function (e) {
+		e.preventDefault();
 		if ($('#callback-name').val() == '' || $('#callback-name').val() == undefined) {
-			e.preventDefault();
 			$('.name-error').text('Необходимо заполнить данное поле')
 		}
-		if ($('#callback-phone').val() == '' || $('#callback-phone').val() == undefined) {
-			e.preventDefault();
+		else if ($('#callback-phone').val() == '' || $('#callback-phone').val() == undefined) {
 			$('.phone-error').text('Введите 10 символов')
+		}
+
+		else {
+			hideModal(callbackForm);
+			showModal(thanksPopup);
 		}
 	})
 	$('.phones-list__cb').click(function (e) {
@@ -458,13 +463,15 @@ $(document).ready(function () {
 		$('body').removeClass('hide-overflow');
 	})
 	////////////////////////////
+
 	$(".popup-close").click(function() {
-		hideModal("#cost-form");
+		hideModal(costForm);
+		hideOverlay();
 	})
 	$(".card__link--request").each(function() {
 		$(this).click(function(evt) {
 			evt.preventDefault();
-			showModal("#cost-form");
+			showModal(costForm);
 		})
 	})
 	$("#cost-phone").mask("+7 (999) 999-99-99", { autoclear: false });
@@ -523,6 +530,19 @@ $(document).ready(function () {
 			$('.phone-error').text('Введите 10 символов')
 		}
 	})
+
+	costForm.submit(function(evt) {
+		evt.preventDefault();
+		if(validateBeforeSending(costName, costPhone)) {
+			showModal(thanksPopup);
+			hideModal(costForm);
+		}
+
+	})
+
+	thanksPopupClose.click(function() {
+		hideModal(thanksPopup);
+	});
 });
 
 /////////// Variables
@@ -533,17 +553,29 @@ var nameErrorItem = $('.name-error');
 var mailErrorItem = $('.mail-error');
 var popupBackground = $('.popup-background');
 var popupInput = $(".popup-form-field");
+var thanksPopup = $(".thanks");
+var thanksPopupClose = thanksPopup.find(".thanks__close");
+var costForm = $("#cost-form");
+var costName = $("#cost-name");
+var costPhone = $("#cost-phone");
+var callbackForm = $("#callback-form");
 
-/////////// Methods
+/////////// Methods (i started to write more clear code here)
+
+function validateBeforeSending(nameField, phoneField) {
+	if (nameField.val() === undefined || nameField.val() === "" || phoneField.val() === undefined || phoneField.val() === "") {
+		return false;
+	}
+	return true;
+}
 
 function showModal(identifyer) {
-	$(identifyer).fadeIn();
+	identifyer.fadeIn();
 	showOverlay();
 	fixBody();
 }
 function hideModal(identifyer) {
-	$(identifyer).fadeOut();
-	hideOverlay();
+	identifyer.fadeOut();
 	unfixBody();
 	clearHints();
 	clearInputs();

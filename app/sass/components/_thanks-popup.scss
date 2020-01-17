@@ -1,0 +1,33 @@
+.thanks {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: #ffffff;
+  z-index: 1666;
+  width: 396px;
+  padding: 52px 62px 65px 65px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    color: #808080;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    color: #969696;
+    letter-spacing: -0.4px;
+    line-height: 20.11px;
+    margin: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 23px;
+    right: 16px;
+  }
+}
