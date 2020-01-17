@@ -391,6 +391,7 @@ $(document).ready(function () {
 		$('body').removeClass('hide-overflow');
 		hideModal(costForm);
 		hideModal(thanksPopup);
+		hideModal(buyForm);
 		$('#callback-name').val('');
 		$('#callback-phone').val('');
 		$("#cost-mail").val("");
@@ -531,6 +532,84 @@ $(document).ready(function () {
 		}
 	})
 
+	//buy-form
+	$(".card__link--buy").each(function() {
+
+		if (!$(this).closest($('.card')).hasClass('card--out-of-stock')){
+			$(this).click(function(evt) {
+				evt.preventDefault();
+				showModal(buyForm);
+			})
+		}
+	})
+
+	$(".buy-form__close").click(function() {
+		hideModal(buyForm);
+		hideOverlay();
+	})
+
+	$("#buy-phone").mask("+7 (999) 999-99-99", { autoclear: false });
+	$('#buy-name').blur(function () {
+		if (this.value == '') {
+			$('.required-icon--name').text('*')
+			$('.name-error').text('Необходимо заполнить данное поле')
+		} else {
+			$('.name-error').text('')
+			$('.required-icon--name').text('')
+		}
+	})
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	$('#buy-mail').bind('input', function () {
+		if (reg.test(this.value) == false) {
+			$('.mail-error').text('Введите латиницей в виде ______@____.__')
+		} else {
+			$('.mail-error').text('')
+		}
+	})
+	$('#buy-mail').blur(function() {
+		if (this.value == '') {
+			$('.mail-error').text('');
+		}
+	})
+	$('#buy-name').focus(function () {
+		$('.name-error').text('')
+	})
+
+	$('#buy-phone').blur(function () {
+		if (this.value == '') {
+			$('.required-icon--phone').text('*')
+			$('.phone-error').text('Введите 10 символов')
+		}
+	})
+	$('#buy-name').bind('input', function () {
+		if (this.value != '') {
+			$('.name-error').text('')
+			$('.required-icon--name').text('')
+		} else {
+			$('.required-icon--name').text('*')
+		}
+
+	})
+	$('#buy-phone').focus(function () {
+		$('.required-icon--phone').text('')
+		$('.phone-error').text('')
+	})
+	$('#buy-form').submit(function (e) {
+		e.preventDefault();
+		if ($('#buy-name').val() == '' || $('#buy-name').val() == undefined) {
+			$('.name-error').text('Необходимо заполнить данное поле')
+		}
+		else if ($('#buy-phone').val() == '' || $('#buy-phone').val() == undefined) {
+			$('.phone-error').text('Введите 10 символов')
+		}
+		else {
+			showModal(thanksPopup);
+			hideModal(buyForm);
+		}
+	})
+
+	////
+
 	costForm.submit(function(evt) {
 		evt.preventDefault();
 		if(validateBeforeSending(costName, costPhone)) {
@@ -559,6 +638,7 @@ var costForm = $("#cost-form");
 var costName = $("#cost-name");
 var costPhone = $("#cost-phone");
 var callbackForm = $("#callback-form");
+var buyForm = $("#buy-form");
 
 /////////// Methods (i started to write more clear code here)
 

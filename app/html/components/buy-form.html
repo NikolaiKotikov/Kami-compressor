@@ -1,0 +1,35 @@
+<form action="https://echo.htmlacademy.ru/courses" method="POST" class="buy-form popup-form" id="buy-form">
+
+
+  <h2 class="buy-form__title popup-form-title">Купить продукт</h2>
+
+
+  <div class="popup-form__field-wrapper">
+    <input class="popup-form-field" name="buy-name" id="buy-name" type="text" placeholder="Ваше имя">
+    <span class="required-icon required-icon--name">*</span>
+    <div class="name-error"></div>
+  </div>
+
+
+  <div class="popup-form__field-wrapper">
+    <input id="buy-phone" name="buy-phone" class="popup-form-field" type="text" inputmode="tel" placeholder="+7 (___) ___-__-__">
+    <span class="required-icon required-icon--phone">*</span>
+    <div class="phone-error"></div>
+  </div>
+
+
+  <div class="popup-form__field-wrapper">
+    <input id="buy-mail" name="buy-mail" class="popup-form-field" type="email" placeholder="E-mail">
+    <div class="mail-error"></div>
+  </div>
+
+
+  <button class="buy-form__submit popup-submit" type="submit">Отправить</button>
+
+
+  <span class="form-notice">- Обязательное поле</span>
+  <button class="popup-close close-button buy-form__close" type="button" aria-label="Закрыть">
+    <svg class="close-button__icon" role="img" width="18" height="18">
+      <use xlink:href="img/sprite.svg#close" /></svg>
+  </button>
+</form>
