@@ -391,6 +391,7 @@ $(document).ready(function () {
 		$('body').removeClass('hide-overflow');
 		hideModal(costForm);
 		hideModal(thanksPopup);
+		hideModal(thanksBuy);
 		hideModal(buyForm);
 		$('#callback-name').val('');
 		$('#callback-phone').val('');
@@ -603,7 +604,7 @@ $(document).ready(function () {
 			$('.phone-error').text('Введите 10 символов')
 		}
 		else {
-			showModal(thanksPopup);
+			showModal(thanksBuy);
 			hideModal(buyForm);
 		}
 	})
@@ -621,6 +622,7 @@ $(document).ready(function () {
 
 	thanksPopupClose.click(function() {
 		hideModal(thanksPopup);
+		hideModal(thanksBuy);
 	});
 });
 
@@ -632,8 +634,9 @@ var nameErrorItem = $('.name-error');
 var mailErrorItem = $('.mail-error');
 var popupBackground = $('.popup-background');
 var popupInput = $(".popup-form-field");
-var thanksPopup = $(".thanks");
-var thanksPopupClose = thanksPopup.find(".thanks__close");
+var thanksPopup = $("#thanks");
+var thanksBuy = $("#thanks-buy");
+var thanksPopupClose = $(".thanks__close");
 var costForm = $("#cost-form");
 var costName = $("#cost-name");
 var costPhone = $("#cost-phone");

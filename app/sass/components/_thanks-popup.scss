@@ -10,6 +10,16 @@
   width: 396px;
   padding: 52px 62px 65px 65px;
 
+  @include bp(420) {
+    padding: 52px 50px 65px 50px;
+    width: 100%;
+  }
+
+  &__price {
+    color: #141414;
+    font-family: 'PT Sans',serif;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 26px;
@@ -23,6 +33,10 @@
     letter-spacing: -0.4px;
     line-height: 20.11px;
     margin: 0;
+
+    &--with-price {
+      margin-bottom: 6px;
+    }
   }
 
   &__close {
