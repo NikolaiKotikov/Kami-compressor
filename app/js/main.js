@@ -624,9 +624,7 @@ $(document).ready(function () {
 		hideModal(thanksPopup);
 		hideModal(thanksBuy);
 	});
-});
-
-/////////// Variables
+	/////////// Variables
 
 var body = $('body');
 var phoneErrorItem = $('.phone-error');
@@ -643,7 +641,7 @@ var costPhone = $("#cost-phone");
 var callbackForm = $("#callback-form");
 var buyForm = $("#buy-form");
 
-/////////// Methods (i started to write more clear code here)
+/////////// Methods
 
 function validateBeforeSending(nameField, phoneField) {
 	if (nameField.val() === undefined || nameField.val() === "" || phoneField.val() === undefined || phoneField.val() === "") {
@@ -697,3 +695,4 @@ function clearInputs() {
 		$(this).val('');
 	});
 }
+});
